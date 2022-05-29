@@ -390,7 +390,8 @@ public class DoubleLinkedListImpl<T> implements DoubleList<T> {
 		
 		T elementoDevuelto = auxiliar.elem;
 		this.front.next = auxiliar.next;
-		auxiliar.next.prev = this.front;
+		if(auxiliar.next != null) 
+		    auxiliar.next.prev = this.front;
 		
 		return elementoDevuelto;
 	}
